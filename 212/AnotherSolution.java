@@ -19,7 +19,7 @@ class TrieNode {
     }
 }
 
-class Solution {
+class AnotherSolution {
     private int m, n;
     //private int[][] visited;
     private int[][] dir = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
