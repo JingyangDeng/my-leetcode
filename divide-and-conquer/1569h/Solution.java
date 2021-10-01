@@ -3,8 +3,12 @@
 //
 //首先建立二叉查找树。可对两个子树求得结果lret和rret，通过计算组合数将其整合：
 //ret = lret * rret * c(lcnt + rcnt, lcnt) 其中lcnt rcnt 为子树节点个数
-//在计算组合数模p时，使用扩展欧几里得算法求逆元。
-//由master定理，复杂度为O(nlogn)。
+//在计算组合数模p时，使用扩展欧几里得算法求逆元，每次复杂度为O(logn)。
+//由master定理，复杂度为O(n(logn)^2)，此题主要需要将计算组合数取模限制在尽量低的复杂度。
+
+//事实上，存在一种方法，只需进行O(n)的预处理便可在O(1)时间内计算组合数
+//建树的过程也可通过并查集优化至O(n alpha(n))，这样一来复杂度便为O(n alpha(n))
+//详见:https://leetcode-cn.com/problems/number-of-ways-to-reorder-array-to-get-same-bst/solution/jiang-zi-shu-zu-zhong-xin-pai-xu-de-dao-tong-yi-2/ 
 class Node {
     public int val, cnt;
     public Node left, right;
